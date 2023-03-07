@@ -1,12 +1,11 @@
 package com.sii.academy.javaweek4_2.regression;
 
+import com.sii.academy.javaweek4_2.TestBase;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.logging.Logger;
 
@@ -14,10 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Execution(ExecutionMode.CONCURRENT)
-public class RegressionTests {
+class RegressionTests extends TestBase {
     private static final Logger logger = Logger.getAnonymousLogger();
-    public static final String CHROMEDRIVER_PATH = "C:\\Users\\mdziewa\\webdriver\\chromedriver.exe";
-    public static final String CHROME_DRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";
+
 
     @Tag("Regression")
     @Tag("Sii")
@@ -61,19 +59,15 @@ public class RegressionTests {
         testPageTitle(url);
     }
 
-    private static void testPageTitle(String url) {
-        System.setProperty(CHROME_DRIVER_SYSTEM_PROPERTY, CHROMEDRIVER_PATH);
+    private void testPageTitle(String url) {
 
         logger.info(String.format("Parallel testing website %s title. Process id=%d", url, Thread.currentThread().getId()));
-        WebDriver browser;
-        browser = new ChromeDriver();
-        logger.info("Initializing chrome webdriver");
-        browser.get(url);
-        String title = browser.getTitle();
+        webDriver.get(url);
+        String title = webDriver.getTitle();
         logger.info(String.format("Downloaded title: %s", title));
         assertNotNull(title, "Page title can't be initialized. Failure");
-        assertFalse(title.isBlank() , "Title contains only white spaces. Failure");
+        assertFalse(title.isBlank(), "Title contains only white spaces. Failure");
         assertFalse(title.isEmpty(), "Empty title. Failure");
-        browser.close();
+
     }
 }
