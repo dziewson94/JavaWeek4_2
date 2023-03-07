@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class RegressionTests {
     private static final Logger logger = Logger.getAnonymousLogger();
     public static final String CHROMEDRIVER_PATH = "C:\\Users\\mdziewa\\webdriver\\chromedriver.exe";
+    public static final String CHROME_DRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";
 
     @Tag("Regression")
     @Tag("Sii")
@@ -24,6 +25,7 @@ public class RegressionTests {
     @ValueSource(strings = {"https://siiportal.sii.pl"})
     void siiPortalTest(String url) {
         testPageTitle(url);
+
     }
 
 
@@ -60,7 +62,8 @@ public class RegressionTests {
     }
 
     private static void testPageTitle(String url) {
-        System.setProperty("webdriver.chrome.driver", CHROMEDRIVER_PATH);
+        System.setProperty(CHROME_DRIVER_SYSTEM_PROPERTY, CHROMEDRIVER_PATH);
+
         logger.info(String.format("Parallel testing website %s title. Process id=%d", url, Thread.currentThread().getId()));
         WebDriver browser;
         browser = new ChromeDriver();
