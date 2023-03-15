@@ -6,24 +6,28 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.logging.Logger;
 
 public class TestBase {
 
-    private static final Logger logger = Logger.getAnonymousLogger();
+    protected static final Logger logger = LoggerFactory.getLogger(TestBase.class);
     protected WebDriver webDriver;
 
     @BeforeAll
     static void setupAll() {
         WebDriverManager.chromedriver().setup();
+
     }
 
     @BeforeEach
     public void setup() {
 
         logger.info("Initializing chrome webdriver");
-        webDriver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions(); options.addArguments("--remote-allow-origins=*");
+        webDriver = new ChromeDriver(options);
     }
 
 

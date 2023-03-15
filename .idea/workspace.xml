@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0f03038-894b-4251-9717-d49fd1000b55" name="Changes" comment="test base added">
+    <list default="true" id="d0f03038-894b-4251-9717-d49fd1000b55" name="Changes" comment="logger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/sii/academy/javaweek4_2/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sii/academy/javaweek4_2/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sii/academy/javaweek4_2/regression/RegressionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sii/academy/javaweek4_2/regression/RegressionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mdziewa/IdeaProjects/affairmetter&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
 }</component>
@@ -53,6 +58,18 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sii.academy.javaweek4_2" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Regression" type="JUnit" factoryName="JUnit">
+      <module name="RegressionTests" />
+      <option name="PACKAGE_NAME" value="com.sii.academy.javaweek4_2.regression" />
+      <option name="MAIN_CLASS_NAME" value="com.sii.academy.javaweek4_2.regression.RegressionTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,13 +108,22 @@
       <option name="project" value="LOCAL" />
       <updated>1678199259689</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="web driver manage r impl">
+      <created>1678293900692</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678293900692</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="Regression tests" />
     <MESSAGE value="test base added" />
-    <option name="LAST_COMMIT_MESSAGE" value="test base added" />
+    <MESSAGE value="web driver manage r impl" />
+    <MESSAGE value="logger" />
+    <option name="LAST_COMMIT_MESSAGE" value="logger" />
   </component>
 </project>

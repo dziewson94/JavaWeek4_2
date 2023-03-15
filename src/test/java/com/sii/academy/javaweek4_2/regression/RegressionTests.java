@@ -7,60 +7,17 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.logging.Logger;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Execution(ExecutionMode.CONCURRENT)
 class RegressionTests extends TestBase {
-    private static final Logger logger = Logger.getAnonymousLogger();
 
 
     @Tag("Regression")
-    @Tag("Sii")
     @ParameterizedTest
-    @ValueSource(strings = {"https://siiportal.sii.pl"})
+    @ValueSource(strings = {"https://wwww.siiportal.sii.pl", "http://www.onet.pl", "http://www.kotuszkowo.pl/", "https://www.filmweb.pl/", "https://www.selenium.dev/documentation/en/webdriver/"})
     void siiPortalTest(String url) {
-        testPageTitle(url);
-
-    }
-
-
-    @Tag("Regression")
-    @Tag("Onet")
-    @ParameterizedTest
-    @ValueSource(strings = {"http://www.onet.pl"})
-    void onetTest(String url) {
-        testPageTitle(url);
-    }
-
-    @Tag("Regression")
-    @Tag("Kittens")
-    @ParameterizedTest
-    @ValueSource(strings = {"http://kotuszkowo.pl/"})
-    void kittenTest(String url) {
-        testPageTitle(url);
-    }
-
-    @Tag("Regression")
-    @Tag("Filmweb")
-    @ParameterizedTest
-    @ValueSource(strings = {"https://www.filmweb.pl/"})
-    void filmwebTest(String url) {
-        testPageTitle(url);
-    }
-
-    @Tag("Regression")
-    @Tag("Selenium")
-    @ParameterizedTest
-    @ValueSource(strings = {"https://www.selenium.dev/documentation/en/webdriver/"})
-    void seleniumTest(String url) {
-        testPageTitle(url);
-    }
-
-    private void testPageTitle(String url) {
-
         logger.info(String.format("Parallel testing website %s title. Process id=%d", url, Thread.currentThread().getId()));
         webDriver.get(url);
         String title = webDriver.getTitle();
